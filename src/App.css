@@ -13,10 +13,13 @@
   }
 }
 
+*{margin: 0;}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -36,3 +39,354 @@
     transform: rotate(360deg);
   }
 }
+
+.logincontainer{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.logotitle{
+  width: 500px;
+  align-self: center;
+}
+
+
+.applogo{
+  display: flex;
+  flex-direction: column;
+}
+
+.loginform{
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  box-shadow: 2px 2px 10px 1px pink;
+  border-radius: 20px;
+}
+
+.login{
+  text-align: left;
+  margin: auto;
+  display: block;
+  padding: 10px;
+}
+
+#password, #loginemail{
+  margin: 10px auto;
+}
+
+#button{
+  width: 100px;
+  padding: 5px;
+  border: none;
+  color: white;
+  background-color: #d62b70;
+  cursor: pointer;
+  margin: 10px auto;
+  align-self: center;
+  align-self: center;
+}
+
+a{
+  text-decoration: none;
+  padding: 10px;
+  color:#d62b70;
+  align-self: center;
+
+}
+
+
+*:focus {
+  outline: none;
+}
+
+
+#login-box {
+  position: relative;
+  margin: 5% auto;
+  width: 500px;
+  height: 500px;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 2px 2px 10px 1px pink;
+}
+
+.left {
+  /* position: absolute; */
+  margin: auto;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding: 40px;
+  width: 300px;
+  height: 400px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  font-size: 28px;
+}
+
+input[type="text"],
+input[type="password"] {
+  display: block;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 4px;
+  width: 220px;
+  height: 32px;
+  border: none;
+  border-bottom: 1px solid #AAA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom: 2px solid #d62b70;;
+  color: #d62b70;
+  transition: 0.2s ease;
+}
+
+input[type="submit"] {
+  width: 120px;
+  height: 32px;
+  background: #d62b70;;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+  opacity: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+}
+
+button.social-signin {
+  margin-bottom: 20px;
+  width: 220px;
+  height: 36px;
+  border: none;
+  border-radius: 2px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+ .signupcontainer{
+  background-image: url(../public/Logo\ 2\ Used\ By\ 2.3\ Million\ Startups.png);
+  background-repeat: no-repeat;
+}
+
+.header{
+  background-color: white;
+  height: 10vh;
+  margin: 0;
+  box-shadow: 2px 2px 10px 1px rgb(228, 226, 226);
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.homelogo{
+  height: 100%;
+}
+
+.headericon{
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  gap:30px;
+  padding-top: 30px;
+  padding-right: 50px;
+}
+
+
+.maincontainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+
+.sidenav{
+  height: 100%;
+  width: 200px;
+  grid-area: sidenav;
+  margin-top:20px;
+}
+
+.navlist{
+  list-style: none;
+ line-height: 3;
+ font-size: 20px;
+ color: rgb(53, 52, 51);
+ font-weight: 600;
+ text-decoration: none;
+}
+
+.feed{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  flex-wrap: wrap;
+  height: fit-content;
+  padding: 10px;
+  gap:2px;
+  margin-top: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px 1px rgb(228, 226, 226);
+}
+
+.userImg{
+  border: 1px solid rgb(53, 52, 51);
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+}
+
+.postInfo{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.iconbtn {
+  font-size: 18px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  cursor: pointer;
+
+}
+
+.displayimg{
+  padding-top: 10px;
+  width: 500px;
+  height: 400px;
+}
+
+.profileimg{
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.displayProfile{
+ width: 40px;
+ height:40px;
+  border-radius: 10px;
+}
+
+.content {
+  line-height: 1.5;
+}
+
+.suggestionbar{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.suggestionnav{
+  height: 100%;
+  width: 200px;
+  margin-top:20px;
+  margin-right: 20px;
+}
+
+.searchbar{
+  border: none;
+}
+
+.search{
+  margin-top: 10px;
+  border: 1px solid grey;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.userinfo{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  flex-wrap: wrap;
+  /* background-color: #d62b70; */
+}
+
+.bio{
+  margin-top: 20px;
+}
+
+.user-post-info{
+  margin-top: 20px;
+  display: flex;
+  gap:20px;
+  flex-wrap: wrap;
+  justify-self: start;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+/* .sociallogo{
+ margin-left:600px;
+ animation: loader 5.0s ;
+} */
+
+
+/* .box {
+  animation: loader 1.25s infinite;
+  width: 50px;
+  height: 50px;
+  color: #00136c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* @keyframes loader {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    border-radius: 50%;
+    rotate: 360deg;
+  }
+}  */
