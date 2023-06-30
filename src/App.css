@@ -365,6 +365,71 @@ button.social-signin {
 }
 
 
+
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  background-color: white;
+  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 5px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.text-field {
+  width: 100%;
+  border: none;
+}
+
+.image-preview {
+  margin: auto;
+  display: block;
+  position: relative;
+}
+
+.close-preview-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.emoji-picker {
+  position: relative;
+  cursor: pointer;
+}
+
+.emoji-icon {
+  color: #377dff;
+  font-size: 24px;
+}
+
+.file-input {
+  display: none;
+}
+
+.post-button {
+  background-color: #d62b70;
+  color: white;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  margin-right: 55px;
+  margin-top: 15px;
+}
+
+
 /* .sociallogo{
  margin-left:600px;
  animation: loader 5.0s ;
