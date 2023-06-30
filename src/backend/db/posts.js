@@ -16,10 +16,11 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    comments:[],
     username: "adarshbalika",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1687947257/Avatar/lovepik-girl-avatar-png-image_401573261_wh1200_tjdo0a.png"
+    imageUrl:"https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
   },
   {
     _id: uuid(),
@@ -30,6 +31,7 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
+    comments:[],
     username: "shubhamsoni",
     createdAt: formatDate(),
     updatedAt: formatDate(),
