@@ -6,7 +6,7 @@ import { useAuth } from '../Context/AuthContext'
 import { Avatar, Stack } from '@mui/material'
 
 function Navbar() {
-    const {userLogout, authState} = useAuth();
+    const { authState} = useAuth();
     const navigate = useNavigate()
     return (
         <div className='header'>
