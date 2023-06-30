@@ -21,6 +21,7 @@ function Home() {
             </div>
             <div className='maincontainer'>
                 <SidenavBar />
+                
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', flexWrap: 'wrap' }}>
                     {
                         feedData?.map((posts) => (

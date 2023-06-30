@@ -99,14 +99,30 @@ export const PostProvider = ({ children }) => {
         }
     }
 
+    const createPost = async (newPost) => {
+        try {
+            const {data,status} = await axios.post(
+               '/api/posts',
+                 {
+                   postData : newPost
+                 },
+               {
+                  headers : {authorization: token}
+               })
+
+               if(status === 201) {
+                dataDispatch({type: 'get_post', payload: data?.posts})
+               }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         if (token) {
             getData();
         }
     }, [token])
-
-
-
 
     return (
         <PostContext.Provider value=
@@ -115,7 +131,9 @@ export const PostProvider = ({ children }) => {
             postDelete, 
             postDislike, 
             postLike, 
-            userPost
+            userPost,
+            createPost,
+            dataDispatch
         }}>
             {children}
         </PostContext.Provider>
