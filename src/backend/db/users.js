@@ -22,7 +22,7 @@ export const users = [
     _id: uuid(),
     firstName: "Jone",
     lastName: "Dae",
-    username: "shubhamsoni",
+    username: "johndoe",
     password: "adarshBalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
@@ -41,5 +41,18 @@ export const users = [
     bio1:"Freezing memories with my camera 📷❤️",
     bio2:"Photography is my passion, my escape, my art",
     displayProfile:"https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
-  }
+  },
+  {
+    _id: uuid(),
+    firstName: "Emily",
+    lastName: "Cooper",
+    username: "EmilyInParis",
+    password: "adarshBalika123",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    bio1:"Salut Tout le Monde ❤️",
+    bio2:"Crois En Toi",
+    displayProfile:"https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1688241207/Avatar/p18761121_b_v13_am_wtg3ju.jpg"
+  },
+  
 ];
