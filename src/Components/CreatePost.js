@@ -32,6 +32,7 @@ const CreatePost = ({ showModal, setShowModal }) => {
   const initialState = {
     content: "",
     imageUrl: "",
+    comments:[]
   };
 
   const [userInput, setUserInput] = useState(initialState);
