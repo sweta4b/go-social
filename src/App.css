@@ -209,6 +209,7 @@ button.social-signin {
   box-shadow: 2px 2px 10px 1px rgb(228, 226, 226);
   display: flex;
   justify-content: space-between;
+  position: sticky;
   
 }
 
@@ -240,6 +241,7 @@ button.social-signin {
   width: 200px;
   grid-area: sidenav;
   margin-top:20px;
+  /* position: fixed; */
 }
 
 .navlist{
@@ -323,6 +325,7 @@ button.social-signin {
   width: 200px;
   margin-top:20px;
   margin-right: 20px;
+  position: relative;
 }
 
 .searchbar{
