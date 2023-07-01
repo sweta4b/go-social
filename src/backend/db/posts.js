@@ -31,10 +31,171 @@ export const posts = [
       likedBy: [],
       dislikedBy: [],
     },
-    comments:[],
-    username: "shubhamsoni",
+    comments:[
+      {
+        _id: uuid(),
+        username: "bawraBuzz",
+        firstName:'Bawra',
+        lastName:'Buzz',
+        text: "🔥 caption",
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+      {
+        _id: uuid(),
+        username: "bawraBuzz",
+        text: "Awesome😊",
+        firstName:'Bawra',
+        lastName:'Buzz',
+        votes: {
+          upvotedBy: [],
+          downvotedBy: [],
+        },
+      },
+    ],
+    username: "johndoe",
     createdAt: formatDate(),
     updatedAt: formatDate(),
     imageUrl: "https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1687947209/Avatar/cute-boy-avatar-illustration_637684-30_giztmz.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+      "La Vie Est Belle..",
+    likes: {
+      likeCount: 8,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/Lily-Collins-Emily-in-Paris_pabtxq.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+     "La Vie Continue.." ,
+    likes: {
+      likeCount:14,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/Emily-in-Paris-Makeup-Artist-Spills-Ultimate-French-Girl-Beauty-Secrets-2_tue3vk.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+  },
+
+
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+  },
+
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+  },
+  {
+    _id: uuid(),
+    content:
+      "Je Reve D'un Ete..",
+    likes: {
+      likeCount: 20,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "EmilyInParis",
+    createdAt: formatDate(),
+    updatedAt: formatDate(),
+    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
   },
 ];
