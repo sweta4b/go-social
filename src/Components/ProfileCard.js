@@ -49,8 +49,6 @@ function ProfileCard({userProfile, totalPost}) {
 
             </div>
 
-           
-
             <div className='bio'>
                  <p>{bio1}</p>
                  <p>{bio2}</p>

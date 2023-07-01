@@ -133,7 +133,8 @@ export const PostProvider = ({ children }) => {
             postLike, 
             userPost,
             createPost,
-            dataDispatch
+            dataDispatch,
+            getData
         }}>
             {children}
         </PostContext.Provider>

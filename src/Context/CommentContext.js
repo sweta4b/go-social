@@ -14,6 +14,7 @@ export const CommentProvider = ({children}) => {
 
 
     const addComment = async (postId, comment) => {
+        console.log(postId, comment)
         try {
             const {data,status} = await axios.post(
                 `/api/comments/add/${postId}`,

@@ -3,12 +3,13 @@ import { faBookmark as regularBookmark, faComment } from '@fortawesome/free-regu
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
-import { Avatar, Stack } from "@mui/material";
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Avatar, Menu, MenuItem, Stack } from "@mui/material";
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../Context/AuthContext';
 import { usePost } from '../Context/PostContext';
 import { useBookmark } from '../Context/BookmarkContext';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUser } from '../Context/UserContext';
 
 
@@ -16,16 +17,24 @@ import { useUser } from '../Context/UserContext';
 function Feed({ data }) {
     const { _id, content, likes, username, createdAt, imageUrl, comments } = data
     const { authState } = useAuth();
-    const {userState} = useUser();
+    const { userState } = useUser();
     const navigate = useNavigate();
     const [user, setUser] = useState({})
-    const { postDislike, postLike } = usePost();
+    const { postDislike, postLike, postDelete } = usePost();
     const { bookmarkState, removePostFromBookmark, addPostToBookmark } = useBookmark();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
 
     useEffect(() => {
         setUser(userState.find((user) => user.username === username))
-    },[username, userState])
+    }, [username, userState])
 
     const isPostLiked =
         data.likes?.likedBy?.filter(({ username }) => username === authState?.user?.username)
@@ -46,30 +55,53 @@ function Feed({ data }) {
     }
 
 
-    
+
 
     return (
         <>
             <div className='feed'>
-                <div className="postInfo">
-                    <Stack onClick={() => navigate(`/profile/${username}`)}>
-                    {/* <Link to={`/profile/${_id}`}> */}
-                        <Avatar src={user.displayProfile} alt="" />
-                        {/* </Link> */}
-                    </Stack>
-                    <div>
-                        <h3>{username}</h3>{" "}
-                        <p style={{ fontSize: '10px' }}>{createdAt}</p>
-                    </div>
-                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className="postInfo">
+                        <Stack onClick={() => navigate(`/profile/${username}`)}>
+                            {/* <Link to={`/profile/${_id}`}> */}
+                            <Avatar src={user.displayProfile} alt="" />
+                            {/* </Link> */}
+                        </Stack>
 
+
+                        <div>
+                            <h3>{username}</h3>{" "}
+                            <p style={{ fontSize: '10px' }}>{createdAt}</p>
+                        </div>
+                    </div>
+
+                    {authState?.user?.username === username && (
+                        <MoreVertIcon aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick} />
+                    )}
+                    <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                            'aria-labelledby': 'basic-button',
+                        }}
+                    >
+                        <MenuItem onClick={handleClose}>Edit</MenuItem>
+                        <MenuItem onClick={() => postDelete(_id)}>Delete</MenuItem>
+
+                    </Menu>
+                </div>
                 <div className="postContent">
                     {imageUrl && <img src={imageUrl} alt="images" className="displayimg" />}
                     <p className='content'>{content}</p>
                     <span style={{ fontSize: "12px" }}>
                         {likes.likeCount} Likes
                     </span>
-                    <span style={{ fontSize: "12px", marginLeft:'10px' }}>
+                    <span style={{ fontSize: "12px", marginLeft: '10px' }}>
                         {comments.length} Comments
                     </span>
                 </div>
