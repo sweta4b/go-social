@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { toast } from "react-toastify";
 import bookmarkReducer from "../Reducer/BookmarkReducer";
 import { useAuth } from "./AuthContext";
 
@@ -29,7 +30,7 @@ export const BookmarkProvider = ({children}) => {
                 dispatchBookmark({tyoe:'set_bookmark', payload: data?.bookmarks})
             }
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.errors[0]);
         }
     }
 
@@ -43,9 +44,10 @@ export const BookmarkProvider = ({children}) => {
             })
             if(status === 200 || status === 201){
                 dispatchBookmark({type:'set_bookmark', payload: data?.bookmarks})
+                toast.success("Added to bookmark")
             }
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.errors[0]);
         }
     }
 
@@ -59,9 +61,10 @@ export const BookmarkProvider = ({children}) => {
             })
             if(status === 200 || status === 201){
                 dispatchBookmark({type: 'set_bookmark', payload: data?.bookmarks})
+                toast.success("Removed from bookmark")
             }
         } catch (error) {
-            console.log(error)
+             toast.error(error.response.data.errors[0]);
         }
     }
 

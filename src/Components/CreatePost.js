@@ -6,7 +6,7 @@ import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import CloseIcon from "@mui/icons-material/Close";
 import { usePost } from "../Context/PostContext";
 import AddReactionIcon from '@mui/icons-material/AddReaction';
-import { border, margin, styled } from "@mui/system"; // Import the styled utility from @mui/system
+import { styled } from "@mui/system";
 
 const Container = styled("div")({
   position: "absolute",
@@ -57,6 +57,7 @@ const CreatePost = ({ showModal, setShowModal }) => {
         <Typography variant="h5" style={{
             marginTop:'10px',
             marginLeft:'10px',
+            color:'black'
 
         }}>New Post</Typography>
         <CloseIconContainer onClick={() => setShowModal(false)}>
@@ -138,7 +139,7 @@ const CreatePost = ({ showModal, setShowModal }) => {
           </div>
 
           <label>
-            <AddPhotoAlternateIcon />
+            <AddPhotoAlternateIcon sx={{color:'black'}}/>
             <input
               style={{ display: "none" }}
               type="file"

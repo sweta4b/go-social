@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { formatDate } from "../utils/authUtils";
+import { adarshbalikaMedia1, bawraBuzzFeedMedia1, bawraBuzzFeedMedia2, bawraBuzzFeedMedia3, bawraBuzzFeedMedia4, bawraBuzzFeedMedia5, emilyFeedMedia1, emilyFeedMedia2, emilyFeedMedia3, johndoeFeedMedia1 } from "./feedmedis";
 
 /**
  * Posts can be added here.
@@ -7,10 +8,10 @@ import { formatDate } from "../utils/authUtils";
  * */
 
 export const posts = [
+
   {
     _id: uuid(),
-    content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+    content:"",
     likes: {
       likeCount: 4,
       likedBy: [],
@@ -18,48 +19,27 @@ export const posts = [
     },
     comments:[],
     username: "adarshbalika",
-    createdAt: formatDate(),
+    createdAt: "2023-06-09T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+    imageUrl:adarshbalikaMedia1,
   },
+
   {
     _id: uuid(),
     content:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.",
+      "",
     likes: {
       likeCount: 7,
       likedBy: [],
       dislikedBy: [],
     },
-    comments:[
-      {
-        _id: uuid(),
-        username: "bawraBuzz",
-        firstName:'Bawra',
-        lastName:'Buzz',
-        text: "🔥 caption",
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-      {
-        _id: uuid(),
-        username: "bawraBuzz",
-        text: "Awesome😊",
-        firstName:'Bawra',
-        lastName:'Buzz',
-        votes: {
-          upvotedBy: [],
-          downvotedBy: [],
-        },
-      },
-    ],
+    comments:[],
     username: "johndoe",
-    createdAt: formatDate(),
+    createdAt: "2022-07-10T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl: "https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1687947209/Avatar/cute-boy-avatar-illustration_637684-30_giztmz.jpg"
+    imageUrl: johndoeFeedMedia1,
   },
+
   {
     _id: uuid(),
     content:
@@ -70,10 +50,10 @@ export const posts = [
       dislikedBy: [],
     },
     comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
+    username: "Emily",
+    createdAt: "2022-07-01T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/Lily-Collins-Emily-in-Paris_pabtxq.jpg"
+    imageUrl:emilyFeedMedia1
   },
   {
     _id: uuid(),
@@ -85,10 +65,10 @@ export const posts = [
       dislikedBy: [],
     },
     comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
+    username: "Emily",
+    createdAt: "2023-06-12T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/Emily-in-Paris-Makeup-Artist-Spills-Ultimate-French-Girl-Beauty-Secrets-2_tue3vk.jpg"
+    imageUrl:emilyFeedMedia2,
   },
   {
     _id: uuid(),
@@ -100,102 +80,89 @@ export const posts = [
       dislikedBy: [],
     },
     comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
+    username: "Emily",
+    createdAt: "2022-03-15T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+    imageUrl:emilyFeedMedia3,
   },
 
-
-  {
-    _id: uuid(),
-    content:
-      "Je Reve D'un Ete..",
-    likes: {
-      likeCount: 20,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
-  },
-  {
-    _id: uuid(),
-    content:
-      "Je Reve D'un Ete..",
-    likes: {
-      likeCount: 20,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
-  },
-  {
-    _id: uuid(),
-    content:
-      "Je Reve D'un Ete..",
-    likes: {
-      likeCount: 20,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
-    updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
-  },
 
   {
     _id: uuid(),
     content:
-      "Je Reve D'un Ete..",
+      "The famous Temple of Lord Shiva in the form of Gaur Bhairav.",
     likes: {
-      likeCount: 20,
+      likeCount: 15,
       likedBy: [],
       dislikedBy: [],
     },
     comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
+    username: "bawraBuzz",
+    createdAt: "2022-02-16T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+    imageUrl: bawraBuzzFeedMedia1,
   },
   {
     _id: uuid(),
     content:
-      "Je Reve D'un Ete..",
+      "The littlest bird sing the prettiest songs.",
     likes: {
-      likeCount: 20,
+      likeCount: 18,
       likedBy: [],
       dislikedBy: [],
     },
     comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
+    username: "bawraBuzz",
+    createdAt: "2023-01-01T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+    imageUrl: bawraBuzzFeedMedia2
   },
+  
   {
     _id: uuid(),
     content:
-      "Je Reve D'un Ete..",
+      "Our dreams will touch the sky, if we let them.",
     likes: {
       likeCount: 20,
       likedBy: [],
       dislikedBy: [],
     },
     comments:[],
-    username: "EmilyInParis",
-    createdAt: formatDate(),
+    username: "bawraBuzz",
+    createdAt: "2022-12-25T10:55:01+18:30",
     updatedAt: formatDate(),
-    imageUrl:"https://res.cloudinary.com/da5x335p3/image/upload/v1688241207/Avatar/emily-in-paris-interview-lede_vbdruw.jpg"
+    imageUrl:  bawraBuzzFeedMedia3,
+  },
+
+  {
+    _id: uuid(),
+    content:
+      "Breathtaking views from the hills  🌄",
+    likes: {
+      likeCount: 25,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "bawraBuzz",
+    createdAt: "2022-12-26T10:55:01+18:30",
+    updatedAt: formatDate(),
+    imageUrl: bawraBuzzFeedMedia4,
+  },
+
+  {
+    _id: uuid(),
+    content:
+      "Finding peace in the beauty of Nature 🌲",
+    likes: {
+      likeCount: 22,
+      likedBy: [],
+      dislikedBy: [],
+    },
+    comments:[],
+    username: "bawraBuzz",
+    createdAt: "2023-01-02T10:55:01+18:30",
+    updatedAt: formatDate(),
+    imageUrl:  bawraBuzzFeedMedia5,
   },
 ];

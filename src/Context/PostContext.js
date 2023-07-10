@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext, useEffect, useReducer } from "react";
+import { toast } from "react-toastify";
 import postReducer from "../Reducer/PostReducer";
 import { useAuth } from "./AuthContext";
 
@@ -15,11 +16,10 @@ export const PostProvider = ({ children }) => {
     const initialDataState = {
         post: [],
         userpost: [],
+        sortby:"latest"
     }
 
     const [dataState, dataDispatch] = useReducer(postReducer, initialDataState)
-
-    // console.log(dataState)
 
 
     const getData = async () => {
@@ -32,8 +32,8 @@ export const PostProvider = ({ children }) => {
             if (status === 200 || status === 201) {
                dataDispatch({ type: 'get_post', payload: data?.posts });
             }
-        } catch (e) {
-            console.log(e);
+        } catch (error) {
+            toast.error(error.response.data.errors[0])
         }
     };
 
@@ -45,9 +45,10 @@ export const PostProvider = ({ children }) => {
             });
             if (status === 200 || status === 201) {
                 dataDispatch({ type: "user_post", payload: data?.posts });
+                
             }
-        } catch (e) {
-            console.log(e)
+        } catch (error) {
+            toast.error(error.response.data.errors[0])
         }
     }
 
@@ -60,10 +61,11 @@ export const PostProvider = ({ children }) => {
             });
             if (status === 200 || status === 201) {
                 dataDispatch({ type: "get_post", payload: data?.posts })
+                toast.success("Liked")
                 return data.posts.find((post) => post._id === postId)
             }
         } catch (error) {
-
+            toast.error(error.response.data.errors[0])
         }
     }
 
@@ -77,9 +79,10 @@ export const PostProvider = ({ children }) => {
             });
             if (status === 200 || status === 201) {
                 dataDispatch({ type: "get_post", payload: data?.posts })
+                toast.success("Disliked")
             }
         } catch (error) {
-
+            toast.error(error.response.data.errors[0])
         }
     }
 
@@ -93,9 +96,10 @@ export const PostProvider = ({ children }) => {
             });
             if (status === 200 || status === 201) {
                 dataDispatch({ type: 'get_post', payload: data?.posts })
+                toast.success("Post Deleted")
             }
         } catch (error) {
-
+            toast.error(error.response.data.errors[0])
         }
     }
 
@@ -112,9 +116,27 @@ export const PostProvider = ({ children }) => {
 
                if(status === 201) {
                 dataDispatch({type: 'get_post', payload: data?.posts})
+                toast.success("Add new post")
                }
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.errors[0])
+        }
+    }
+
+
+    const editPost = async (postId, postData) => {
+        try {
+            const {data, status} = await axios.post(
+                `/api/posts/edit/${postId}`,
+                {postData},
+                {headers: {authorization: token}}
+            )
+            if (status === 200 || status === 201){
+                dataDispatch({type:'get_post', payload: data?.posts})
+                toast.success("Post edited")
+            }
+        } catch (error) {
+            toast.error(error.response.data.errors[0])
         }
     }
 
@@ -134,7 +156,8 @@ export const PostProvider = ({ children }) => {
             userPost,
             createPost,
             dataDispatch,
-            getData
+            getData,
+            editPost
         }}>
             {children}
         </PostContext.Provider>

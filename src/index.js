@@ -10,6 +10,7 @@ import { PostProvider } from './Context/PostContext';
 import { UserProvider } from './Context/UserContext';
 import { BookmarkProvider } from './Context/BookmarkContext';
 import { CommentProvider } from './Context/CommentContext';
+import ThemeProvider from './Context/ThemeContext';
 
 makeServer();
 
@@ -18,6 +19,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
+        <ThemeProvider>
         <PostProvider>
           <UserProvider>
             <BookmarkProvider>
@@ -27,6 +29,7 @@ root.render(
             </BookmarkProvider>
           </UserProvider>
         </PostProvider>
+        </ThemeProvider>
       </AuthProvider>
     </Router>
   </React.StrictMode>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createContext, useContext } from "react";
+import { toast } from "react-toastify";
 import { useAuth } from "./AuthContext";
 import { usePost } from "./PostContext";
 
@@ -14,7 +15,7 @@ export const CommentProvider = ({children}) => {
 
 
     const addComment = async (postId, comment) => {
-        console.log(postId, comment)
+
         try {
             const {data,status} = await axios.post(
                 `/api/comments/add/${postId}`,
@@ -26,10 +27,11 @@ export const CommentProvider = ({children}) => {
                 })
                 if(status === 200 || status ===201){
                     dataDispatch({type:'get_post', payload: data?.posts})
+                    toast.success("Comment added")
                 }
                 
         } catch (error) {
-            console.log(error)
+            toast.error(error.response.data.errors[0])
         }
     }
 
@@ -63,9 +65,10 @@ export const CommentProvider = ({children}) => {
             })
             if(status === 200 || status === 201){
                 dataDispatch({type:'get_post', payload: data?.posts})
+                toast.success("Comment deleted")
             }
         } catch (error) {
-           console.log(error) 
+            toast.error(error.response.data.errors[0])
         }
     }
 

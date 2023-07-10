@@ -1,18 +1,40 @@
 import React from 'react'
 import Feed from '../Components/Feed'
+import Filter from '../Components/Filter'
 import Navbar from '../Components/Navbar'
 import SidenavBar from '../Components/SidenavBar'
 import SuggestionBar from '../Components/SuggestionBar'
 import { useAuth } from '../Context/AuthContext'
 import { usePost } from '../Context/PostContext'
-import { useUser } from '../Context/UserContext'
+
 
 function Home() {
     const { dataState } = usePost()
     const { authState } = useAuth()
-    const { userState } = useUser();
 
-    const feedData = [...dataState?.post?.filter((post) => post.username === authState?.user?.username), ...dataState?.post?.filter(({ username }) => userState?.find((user) => user.username === authState?.user?.username)?.following?.map(({ username }) => username).includes(username))]
+
+    let feedData=[]
+    const followFeedPost = dataState?.post?.filter(({ username }) => {
+        const followUsernameArr = authState?.user?.following?.map(
+          ({ username }) => username
+        );
+        return followUsernameArr?.includes(username);
+      });
+    
+      feedData = [
+        ...feedData,
+        ...followFeedPost,
+        ...dataState?.post?.filter(
+          ({ username }) => username === authState?.user?.username
+        ),
+      ];
+
+    if(dataState?.sortby === "trending"){
+       feedData = feedData?.sort((a,b) => b.likes.likeCount - a.likes.likeCount);
+    }else if(dataState?.sortby === "latest"){
+        feedData = feedData?.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))
+    }
+
 
     return (
         <>
@@ -23,6 +45,7 @@ function Home() {
                 <SidenavBar />
                 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', flexWrap: 'wrap' }}>
+                    <Filter/>
                     {
                         feedData?.map((posts) => (
 
@@ -34,6 +57,7 @@ function Home() {
                 </div>
                 <SuggestionBar />
             </div>
+           
         </>
     )
 }

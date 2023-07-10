@@ -14,8 +14,8 @@ export const users = [
     password: "adarshbalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    bio1:"It's never too late. Start to code today!.",
-    bio2:"",
+    portfolioUrl:"",
+    bio:"It's never too late. Start to code today!.",
     displayProfile:"https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1687947257/Avatar/lovepik-girl-avatar-png-image_401573261_wh1200_tjdo0a.png",
   },
   {
@@ -26,8 +26,8 @@ export const users = [
     password: "adarshBalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    bio1:"Hey Developers..",
-    bio2:"Let's Code..",
+    bio:"Let's Code..",
+    portfolioUrl:"",
     displayProfile:"https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1687947209/Avatar/cute-boy-avatar-illustration_637684-30_giztmz.jpg"
   },
   {
@@ -38,20 +38,20 @@ export const users = [
     password: "adarshBalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    bio1:"Freezing memories with my camera 📷❤️",
-    bio2:"Photography is my passion, my escape, my art",
+    portfolioUrl:"",
+    bio:"📷 Photography is my passion, my escape, my art ❤️" ,
     displayProfile:"https://images.unsplash.com/photo-1497316730643-415fac54a2af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
   },
   {
     _id: uuid(),
     firstName: "Emily",
     lastName: "Cooper",
-    username: "EmilyInParis",
+    username: "Emily",
     password: "adarshBalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    bio1:"Salut Tout le Monde ❤️",
-    bio2:"Crois En Toi",
+    bio:"Salut Tout le Monde ❤️",
+    portfolioUrl:"www.emilyinparis.com",
     displayProfile:"https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1688241207/Avatar/p18761121_b_v13_am_wtg3ju.jpg"
   },
   

@@ -4,10 +4,12 @@ import SearchIcon from '@mui/icons-material/Search';
 import { useAuth } from '../Context/AuthContext';
 import { useUser } from '../Context/UserContext'
 import { useNavigate } from 'react-router-dom';
+import { useTheme } from '../Context/ThemeContext';
 
 function SuggestionBar() {
     const { userState, followTheUser,unfollowTheUser } = useUser();
     const { authState } = useAuth();
+    const{themeType} = useTheme()
     const [searchUser, setSearchUser] = useState('');
     const navigate = useNavigate();
 
@@ -25,6 +27,7 @@ function SuggestionBar() {
                 <div className='search'>
                 <SearchIcon/>
                 <input
+                style={{backgroundColor: themeType ? 'black' : 'white', color: themeType ? 'white' : 'black' }}
                  placeholder='search user....' onChange={(event) => setSearchUser(event.target.value)} className='searchbar'/>
                  </div>
                 {
@@ -40,7 +43,7 @@ function SuggestionBar() {
                                     isFollowed(user?._id) ? (
                                         <Button variant='contained' size='small' sx={{ backgroundColor: '#d62b70', mt: 2, width: '100px' }} onClick={() => unfollowTheUser(user?._id)}>Unfollow</Button>
                                     ) : (
-                                        <Button variant='contained' size='small' sx={{ backgroundColor: '#d62b70', mt: 2, width: '100px' }} onClick={() => followTheUser(user?._id)}>Follow</Button>
+                                        <Button variant='contained' size='small' sx={{ backgroundColor: '#d62b70', mt: 2, width: '100px' }} onClick={() => followTheUser(user?._id)}>Follow </Button>
                                     )
                                 }
                                

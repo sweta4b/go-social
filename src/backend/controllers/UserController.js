@@ -20,9 +20,9 @@ export const getAllUsersHandler = function () {
  * */
 
 export const getUserHandler = function (schema, request) {
-  const userId = request.params.userId;
+  const username = request.params.username;
   try {
-    const user = schema.users.findBy({ _id: userId }).attrs;
+    const user = schema.users.findBy({ username: username }).attrs;
     return new Response(200, {}, { user });
   } catch (error) {
     return new Response(
@@ -56,7 +56,7 @@ export const editUserHandler = function (schema, request) {
       );
     }
     const { userData } = JSON.parse(request.requestBody);
-    console.log(userData && userData.username && userData.username !== user.username);
+    // console.log(userData && userData.username && userData.username !== user.username);
     if (userData && userData.username && userData.username !== user.username) {
       return new Response(
         404,

@@ -15,6 +15,11 @@
 
 *{margin: 0;}
 
+.dark{
+  background-color: #111111;
+  color: white;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -40,11 +45,7 @@
   }
 }
 
-.logincontainer{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
+
 
 .logotitle{
   width: 500px;
@@ -110,6 +111,7 @@ a{
 #login-box {
   position: relative;
   margin: 5% auto;
+  margin-left: -20px;
   width: 500px;
   height: 500px;
   background: #FFF;
@@ -118,7 +120,6 @@ a{
 }
 
 .left {
-  /* position: absolute; */
   margin: auto;
   top: 0;
   left: 0;
@@ -157,15 +158,30 @@ input[type="password"]:focus {
   transition: 0.2s ease;
 }
 
-input[type="submit"] {
+input[type="submit"]{
   width: 120px;
   height: 32px;
-  background: #d62b70;;
+  background: #d62b70;
   border: none;
   border-radius: 2px;
   color: #FFF;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.label{
+  font-size: 14px;
+  text-align: center;
+  width: 120px;
+  height: 32px;
+  background: #d62b70;
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   transition: 0.1s ease;
   cursor: pointer;
@@ -198,8 +214,9 @@ button.social-signin {
 }
 
  .signupcontainer{
-  background-image: url(../public/Logo\ 2\ Used\ By\ 2.3\ Million\ Startups.png);
-  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .header{
@@ -210,12 +227,14 @@ button.social-signin {
   display: flex;
   justify-content: space-between;
   position: sticky;
-  
 }
 
 .homelogo{
   height: 100%;
+  border: none;
+
 }
+
 
 .headericon{
   font-size: 30px;
@@ -232,31 +251,28 @@ button.social-signin {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px;
+  margin-top: 150px;
 }
 
 
 .sidenav{
   height: 100%;
   width: 200px;
-  grid-area: sidenav;
-  margin-top:20px;
-  /* position: fixed; */
 }
 
 .navlist{
   list-style: none;
  line-height: 3;
  font-size: 20px;
- color: rgb(53, 52, 51);
  font-weight: 600;
  text-decoration: none;
+ position: fixed;
 }
 
 .feed{
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 600px;
   flex-wrap: wrap;
   height: fit-content;
   padding: 10px;
@@ -289,10 +305,16 @@ button.social-signin {
 
 }
 
+.profilecard{
+  width:  600px;
+}
+
 .displayimg{
   padding-top: 10px;
-  width: 500px;
+  width: 100%;
   height: 400px;
+  margin: auto;
+  display: block;
 }
 
 .profileimg{
@@ -309,6 +331,8 @@ button.social-signin {
 
 .content {
   line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .suggestionbar{
@@ -323,9 +347,7 @@ button.social-signin {
 .suggestionnav{
   height: 100%;
   width: 200px;
-  margin-top:20px;
   margin-right: 20px;
-  position: relative;
 }
 
 .searchbar{
@@ -346,11 +368,14 @@ button.social-signin {
   flex-direction: row;
   gap:10px;
   flex-wrap: wrap;
-  /* background-color: #d62b70; */
 }
 
 .bio{
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  text-align: left;
 }
 
 .user-post-info{
@@ -366,95 +391,3 @@ button.social-signin {
   flex-direction: row;
   justify-content: space-between;
 }
-
-
-
-.modal-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 340px;
-  background-color: white;
-  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
-  padding: 16px;
-  border-radius: 5px;
-}
-
-.close-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-.text-field {
-  width: 100%;
-  border: none;
-}
-
-.image-preview {
-  margin: auto;
-  display: block;
-  position: relative;
-}
-
-.close-preview-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-.emoji-picker {
-  position: relative;
-  cursor: pointer;
-}
-
-.emoji-icon {
-  color: #377dff;
-  font-size: 24px;
-}
-
-.file-input {
-  display: none;
-}
-
-.post-button {
-  background-color: #d62b70;
-  color: white;
-}
-
-.flex-container {
-  display: flex;
-  align-items: center;
-  margin-right: 55px;
-  margin-top: 15px;
-}
-
-
-/* .sociallogo{
- margin-left:600px;
- animation: loader 5.0s ;
-} */
-
-
-/* .box {
-  animation: loader 1.25s infinite;
-  width: 50px;
-  height: 50px;
-  color: #00136c;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* @keyframes loader {
-  0% {
-    rotate: 0deg;
-  }
-  100% {
-    border-radius: 50%;
-    rotate: 360deg;
-  }
-}  */
