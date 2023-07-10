@@ -95,7 +95,7 @@ function Profile() {
                         </div>
                         <div className='bio'>
                             <p>{userData?.bio}</p>
-                            <p>{userData?.portfolioUrl}</p>
+                            <a href={userData?.portfolioUrl} target="_blank" rel="noreferrer" style={{marginLeft:'-450px'}}>www.{userData?.username}.com</a>
                         </div>
                         <div className='user-post-info'>
                             <p>{postNumber} post</p>

@@ -14,7 +14,7 @@ export const users = [
     password: "adarshbalika123",
     createdAt: formatDate(),
     updatedAt: formatDate(),
-    portfolioUrl:"",
+    portfolioUrl:"https://bishtsweta-my-website.netlify.app/",
     bio:"It's never too late. Start to code today!.",
     displayProfile:"https://res.cloudinary.com/da5x335p3/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1687947257/Avatar/lovepik-girl-avatar-png-image_401573261_wh1200_tjdo0a.png",
   },
