@@ -12,9 +12,9 @@ import { useAuth } from './Context/AuthContext';
 
 function App() {
   const ProtectedRoute = () => {
-    const { authState } = useAuth();
+    const { token } = useAuth();
     const location = useLocation();
-    return authState?.token ? (
+    return token ? (
       <Outlet />
     ) : (
       <Navigate to="/" state={{ from: location }} replace />
